@@ -9,8 +9,15 @@ import bch from "./logos/bitcoin-cash.png"
 import eth from "./logos/ethereum.png"
 import wbtc from "./logos/wrapped-bitcoin.png"
 import xrp from "./logos/xrp.png"
+import {useState} from "react";
 
 export default function Home() {
+    const [searchQuery, setSearchQuery] = useState("")
+
+    const handleSearchInput = (event) => {
+        let input = event.target.value;
+        setSearchQuery(input)
+    }
 
     return (
         <article className={"d-flex flex-column vh-100"}>
@@ -29,14 +36,14 @@ export default function Home() {
                     <h1 className={"fw-bolder"}>Crypto Logos</h1>
                     <p className="lead">Logos for popular cryptocurrencies and projects.</p>
                     <section className={"row offset-lg-2 col-lg-8 px-3"}>
-                        <input type="text" className="form-control form-control-lg"/>
+                        <input type="text" className="form-control form-control-lg" onChange={handleSearchInput}/>
                     </section>
                 </Container>
             </header>
 
             <Container>
                 <section className="row">
-                    {Logos.sort((a, b) => a.name >= b.name).map((logo) => {
+                    {Logos.filter(a=>a.name.toLowerCase().includes(searchQuery.toLowerCase())).sort((a, b) => a.name >= b.name).map((logo) => {
                         return <div className="col-lg-2 col-md-3 col-sm-4 col-6 text-center mb-3">
                             <h2 className={"h6 fw-bolder d-block"}>{`${logo.name}`}</h2>
                             <LazyLoadImage className={"rounded-circle"} alt={`${logo.name} logo`}
