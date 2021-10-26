@@ -48,12 +48,12 @@ export default function Home() {
             </Container>
             <footer className={"align-self-end mt-auto"}>
                 <Container>
-                    <a
+                    <a href="https://github.com/truemiller/crypto-logos">Github</a> - <a
                         href="//truemiller.com"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        By True Miller
+                        True Miller
                     </a>
                 </Container>
             </footer>
