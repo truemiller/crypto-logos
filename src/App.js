@@ -2,14 +2,8 @@ import {Helmet} from "react-helmet"
 import {Container, Navbar, NavbarBrand} from "react-bootstrap";
 import "bootswatch/dist/zephyr/bootstrap.css";
 import {LazyLoadImage} from 'react-lazy-load-image-component';
-
-import avax from "./logos/avalanche.png"
-import btc from "./logos/bitcoin.png"
-import bch from "./logos/bitcoin-cash.png"
-import eth from "./logos/ethereum.png"
-import wbtc from "./logos/wrapped-bitcoin.png"
-import xrp from "./logos/xrp.png"
 import {useState} from "react";
+import Logos from "./logos"
 
 export default function Home() {
     const [searchQuery, setSearchQuery] = useState("")
@@ -43,11 +37,11 @@ export default function Home() {
 
             <Container>
                 <section className="row">
-                    {Logos.filter(a=>a.name.toLowerCase().includes(searchQuery.toLowerCase())).sort((a, b) => a.name >= b.name).map((logo) => {
+                    {logos.filter(a => a.name.toLowerCase().includes(searchQuery.toLowerCase())).sort((a, b) => a.name >= b.name).map((logo) => {
                         return <div className="col-lg-2 col-md-3 col-sm-4 col-6 text-center mb-3">
                             <h2 className={"h6 fw-bolder d-block"}>{`${logo.name}`}</h2>
-                            <LazyLoadImage className={"rounded-circle"} alt={`${logo.name} logo`}
-                                           title={`${logo.name} logo`} src={logo.logo} effect={"blur"}/>
+                            <LazyLoadImage className={"rounded"} alt={`${logo.name} logo`}
+                                           title={`${logo.name} logo`} src={logo.logo} effect={"blur"} height={89} maxWidth={89}/>
 
                         </div>
                     })}
@@ -56,12 +50,12 @@ export default function Home() {
             <footer className={"align-self-end mt-auto"}>
                 <Container>
                     <a href="https://github.com/truemiller/crypto-logos">Github</a> - <a
-                        href="//truemiller.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        True Miller
-                    </a>
+                    href="//truemiller.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    True Miller
+                </a>
                 </Container>
             </footer>
         </article>
@@ -69,11 +63,32 @@ export default function Home() {
 }
 
 
-const Logos = [
-    {name: "BTC", logo: btc},
-    {name: "AVAX", logo: avax},
-    {name: "BCH", logo: bch},
-    {name: "ETH", logo: eth},
-    {name: "wBTC", logo: wbtc},
-    {name: "XRP", logo: xrp},
+const logos = [
+    {name: "AAVE", logo: Logos.aave},
+    {name: "AVAX", logo: Logos.avax},
+    {name: "AVE", logo: Logos.ave},
+    {name: "AVME", logo: Logos.avme},
+    {name: "BAG", logo: Logos.bag},
+    {name: "BCH", logo: Logos.bch},
+    {name: "BTC", logo: Logos.btc},
+    {name: "CNR", logo: Logos.cnr},
+    {name: "CYCLE", logo: Logos.cycle},
+    {name: "DREGG", logo: Logos.dregg},
+    {name: "ELK", logo: Logos.elk},
+    {name: "ETH", logo: Logos.eth},
+    {name: "GAJ", logo: Logos.gaj},
+    {name: "GDL", logo: Logos.gdl},
+    {name: "JOE", logo: Logos.joe},
+    {name: "LINK", logo: Logos.link},
+    {name: "LYD", logo: Logos.lyd},
+    {name: "MFI", logo: Logos.mfi},
+    {name: "MIM", logo: Logos.mim},
+    {name: "PEFI", logo: Logos.pefi},
+    {name: "PNG", logo: Logos.png},
+    {name: "QI", logo: Logos.qi},
+    {name: "SNOB", logo: Logos.snob},
+    {name: "SUSHI", logo: Logos.sushi},
+    {name: "TEDDY", logo: Logos.teddy},
+    {name: "wBTC", logo: Logos.wbtc},
+    {name: "XRP", logo: Logos.xrp},
 ]
