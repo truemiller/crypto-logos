@@ -17,8 +17,7 @@ export default function Home() {
         <article className={"d-flex flex-column vh-100"}>
             <Helmet>
                 <title>Crypto Logos</title>
-                <meta name="description" content="Find logos for your favourite cryptocurrencys."/>
-                <link rel="icon" href="/favicon.ico"/>
+                <meta name="description" content="Logos for popular cryptos, cryptocurrency projects, blockchains, exchanges and more."/>
             </Helmet>
             <header>
                 <Navbar variant={"light"} className={"bg-light"}>
@@ -37,7 +36,10 @@ export default function Home() {
 
             <Container>
                 <section className="row">
-                    {logos.filter(a => a.name.toLowerCase().includes(searchQuery.toLowerCase())).sort((a, b) => a.name >= b.name).map((logo) => {
+                    {logos.filter(a => a.name.toLowerCase()
+                        .includes(searchQuery.toLowerCase()))
+                        .sort((a, b) => a.name >= b.name)
+                        .map((logo) => {
                         return <div className="col-lg-2 col-md-3 col-sm-4 col-6 text-center mb-3">
                             <h2 className={"h6 fw-bolder d-block"}>{`${logo.name}`}</h2>
                             <LazyLoadImage className={"rounded"} alt={`${logo.name} logo`}
