@@ -1,9 +1,9 @@
 import {Helmet} from "react-helmet"
-import {Container, Navbar, NavbarBrand} from "react-bootstrap";
+import {Button, Container, Navbar, NavbarBrand} from "react-bootstrap";
 import "bootswatch/dist/zephyr/bootstrap.css";
 import {LazyLoadImage} from 'react-lazy-load-image-component';
 import {useState} from "react";
-import Logos from "./logos"
+import {Logos} from "./logos"
 
 export default function Home() {
     const [searchQuery, setSearchQuery] = useState("")
@@ -36,15 +36,15 @@ export default function Home() {
 
             <Container>
                 <section className="row">
-                    {logos.filter(a => a.name.toLowerCase()
+                    {Logos.filter(a => a.name.toLowerCase()
                         .includes(searchQuery.toLowerCase()))
                         .sort((a, b) => a.name >= b.name)
                         .map((logo) => {
-                        return <div className="col-lg-2 col-md-3 col-sm-4 col-6 text-center mb-3">
-                            <h2 className={"h6 fw-bolder d-block"}>{`${logo.name}`}</h2>
+                        return <div className="col-lg-2 col-md-3 col-sm-4 col-6 text-center card card-body rounded-0">
+                            <a href={logo.logo}><h2 className={"h6 fw-bolder d-block"}>{`${logo.name}`}</h2>
                             <LazyLoadImage className={"rounded"} alt={`${logo.name} logo`}
                                            title={`${logo.name} logo`} src={logo.logo} effect={"blur"} height={89} maxWidth={89}/>
-
+                            </a>
                         </div>
                     })}
                 </section>
@@ -52,46 +52,14 @@ export default function Home() {
             <footer className="footer p-3 bg-white justify-content-between d-flex flex-row border-top">
 					<span className="text-muted">&copy; <a href="https://truemiller.com" className={"text-decoration-none"}>True Miller</a> 2020-2021. All rights
 						reserved.</span>
-                <span><a href="//rpc.info" className={"text-decoration-none"}>RPC Info</a></span>
-                <span><a href="//twitter.com/truemiller_com" className={"text-decoration-none"}>Twitter</a></span>
-                <span><a href="//t.me/truemiller1" className={"text-decoration-none"}>Telegram</a></span>
+                <div>
+                    <span><Button variant={"outline-primary"} href="//rpc.info" className={"text-decoration-none me-3"}>RPC Info</Button></span>
+                    <span><Button variant={"outline-primary"} href="//twitter.com/truemiller_com" className={"text-decoration-none me-3"}>Twitter</Button></span>
+                    <span><Button variant={"outline-primary"} href="//t.me/truemiller1" className={"text-decoration-none me-3"}>Telegram</Button></span>
+                </div>
 
             </footer>
         </article>
     )
 }
 
-
-const logos = [
-    {name: "AAVE", logo: "/logos/aave.png"},
-    {name: "AVAX", logo: "/logos/avax.png"},
-    {name: "AVE", logo: "/logos/ave.png"},
-    {name: "AVME", logo: "/logos/avme.png"},
-    {name: "BAG", logo: "/logos/bag.png"},
-    {name: "BCH", logo: "/logos/bch.png"},
-    {name: "BTC", logo: "/logos/btc.png"},
-    {name: "CNR", logo: "/logos/cnr.png"},
-    {name: "CYCLE", logo: "/logos/cycle.png"},
-    {name: "DREGG", logo: "/logos/dregg.png"},
-    {name:"ELA", logo: "/logos/ela.png"},
-    {name: "ELK", logo: "/logos/elk.png"},
-    {name: "ETH", logo: "/logos/eth.png"},
-    {name: "GAJ", logo: "/logos/gaj.png"},
-    {name: "GDL", logo: "/logos/gdl.png"},
-    {name: "JOE", logo: "/logos/joe.png"},
-    {name: "LINK", logo: "/logos/link.png"},
-    {name: "LYD", logo: "/logos/lyd.png"},
-    {name: "MFI", logo: "/logos/mfi.png"},
-    {name: "MIM", logo: "/logos/mim.png"},
-    {name: "PEFI", logo: "/logos/pefi.png"},
-    {name: "PNG", logo: "/logos/png.png"},
-    {name: "QI", logo: "/logos/qi.png"},
-    {name: "SNOB", logo: "/logos/snob.png"},
-    {name: "SUSHI", logo: "/logos/sushi.png"},
-    {name: "TEDDY", logo: "/logos/teddy.png"},
-    {name: "wBTC", logo: "/logos/wbtc.png"},
-    {name: "XRP", logo: "/logos/xrp.png"},
-    {name: "SUSD", logo: "/logos/susd.png"},
-    {name: "SET", logo: "/logos/set.png"},
-    {name: "USDT", logo: "/logos/usdt.png"},
-]
