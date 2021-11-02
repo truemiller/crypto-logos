@@ -8,6 +8,7 @@ import btc from "./logos/btc.png"
 import cnr from "./logos/cnr.png"
 import cycle from "./logos/cycle.png"
 import dregg from "./logos/dregg.png"
+import ela from "./logos/ela.png"
 import elk from "./logos/elk.png"
 import eth from "./logos/eth.png"
 import gaj from "./logos/gaj.png"
@@ -21,11 +22,14 @@ import pefi from "./logos/pefi.png"
 import png from "./logos/png.png"
 import qi from "./logos/qi.png"
 import snob from "./logos/snob.png"
+import set from "./logos/set.png"
+import susd from "./logos/susd.png"
 import sushi from "./logos/sushi.png"
 import teddy from "./logos/teddy.png"
 import wbtc from "./logos/wbtc.png"
 import xrp from "./logos/xrp.png"
 import yts from "./logos/yts.png"
+import usdt from "./logos/usdt.png"
 
 const Logos = {
     aave:aave,
@@ -38,6 +42,7 @@ const Logos = {
     cnr:cnr,
     cycle: cycle,
     dregg: dregg,
+    ela: ela,
     elk: elk,
     eth: eth,
     gaj: gaj,
@@ -55,7 +60,10 @@ const Logos = {
     teddy:teddy,
     wbtc: wbtc,
     xrp:xrp,
-    yts:yts
+    yts:yts,
+    set:set,
+    susd:susd,
+    usdt:usdt
 }
 
 export default Logos

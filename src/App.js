@@ -73,6 +73,7 @@ const logos = [
     {name: "CNR", logo: Logos.cnr},
     {name: "CYCLE", logo: Logos.cycle},
     {name: "DREGG", logo: Logos.dregg},
+    {name:"ELA", logo: Logos.ela},
     {name: "ELK", logo: Logos.elk},
     {name: "ETH", logo: Logos.eth},
     {name: "GAJ", logo: Logos.gaj},
@@ -90,4 +91,7 @@ const logos = [
     {name: "TEDDY", logo: Logos.teddy},
     {name: "wBTC", logo: Logos.wbtc},
     {name: "XRP", logo: Logos.xrp},
+    {name: "SUSD", logo: Logos.susd},
+    {name: "SET", logo: Logos.set},
+    {name: "USDT", logo: Logos.usdt},
 ]
