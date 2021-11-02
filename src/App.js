@@ -49,16 +49,13 @@ export default function Home() {
                     })}
                 </section>
             </Container>
-            <footer className={"align-self-end mt-auto"}>
-                <Container>
-                    <a href="https://github.com/truemiller/crypto-logos">Github</a> - <a
-                    href="//truemiller.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    True Miller
-                </a>
-                </Container>
+            <footer className="footer p-3 bg-white justify-content-between d-flex flex-row border-top">
+					<span className="text-muted">&copy; <a href="https://truemiller.com" className={"text-decoration-none"}>True Miller</a> 2020-2021. All rights
+						reserved.</span>
+                <span><a href="//rpc.info" className={"text-decoration-none"}>RPC Info</a></span>
+                <span><a href="//twitter.com/truemiller_com" className={"text-decoration-none"}>Twitter</a></span>
+                <span><a href="//t.me/truemiller1" className={"text-decoration-none"}>Telegram</a></span>
+
             </footer>
         </article>
     )
