@@ -1,6 +1,6 @@
 import {Helmet} from "react-helmet"
 import {Button, Container, Navbar, NavbarBrand} from "react-bootstrap";
-import "bootswatch/dist/zephyr/bootstrap.css";
+import "bootswatch/dist/cosmo/bootstrap.css";
 import {LazyLoadImage} from 'react-lazy-load-image-component';
 import {useState} from "react";
 import {Logos} from "./logos"
